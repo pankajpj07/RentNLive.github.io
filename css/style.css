@@ -261,13 +261,17 @@ h4{
   #newsletter h1,
   #newsletter form,
   #boxes .box,
-  article#main-col,
   aside#sidebar,
   #showcase
   {
     float:none;
     width:100%;
     text-align:center;
+  }
+  article#main-col{
+    float:none;
+    width:100%;
+    text-align:justify;
   }
   header{
     padding-bottom:20px;
