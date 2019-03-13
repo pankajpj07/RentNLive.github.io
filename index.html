@@ -10,7 +10,7 @@
     <header>
        <div class="container">
           <div id="branding">
-            <h1><span class="highlight">Rent It</span> Live In</h1>
+            <h1><span class="highlight">My</span> Portfolio</h1>
          </div>
          <nav>
            <ul>
@@ -24,61 +24,38 @@
     
     
     
-    
-    <section id="showcase">
-        <div class="slideshow-container">
-
-<div class="mySlides fade">
-  <img src="images/slide1.jpg" style="width:100%">
-</div>
-
-<div class="mySlides fade">
-  <img src="images/slide2.jpg" style="width:100%">
-</div>
-
-<div class="mySlides fade">
-  <img src="images/slide3.jpg" style="width:100%">
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-     
+    <div class="container">
+    <section class="showcase" >
+      <img id="intro-image" src="https://cdn-images-1.medium.com/max/2600/1*5TRuG7tG0KrZJXKoFtHlSg.jpeg"  align="center">
+      
+    <h1 id="my-intro" >Hey! I'm Pankaj Jain</h1>
+        <p class="profession">A web developer</p>
+    <div id="quote">“I'm not a great programmer;<br> I'm just a good programmer with great habits.”<br> 
+― <strong>Kent Beck</strong></div>
     </section>
+      </div>
     
     <section id="newsletter">
       <div class="container">
-        <h1>Subscribe to our newsletters</h1>
-        <form>
-          <input type="email" placeholder="Enter email">
-          <button type="submit" class="button_1">Subscribe</button>
-        </form>
+        <h2>Basic skills of a Web Developer<h2>
       </div>
     </section>
     <section id="boxes">
       <div class="container">
         <div class="box">
-          <img src="images/furnished.png"> 
-          <h3>Fully/Semi Furnished</h3>
-          <p>Aliquam tempus at velit at ultrices. Sed tellus risus, elementum et ultricies vel, luctus vel metus.</p>
+          <img src="images/html5.png"> 
+          <h3>HTML5 Markup</h3>
+          <p>HTML 5 is a software solution stack that defines the properties and behaviors of web page content by implementing a markup based pattern to it. HTML 5 is the fifth and current major version of the HTML standard, and subsumes XHTML.</p>
         </div>
         <div class="box">
-          <img src="images/kitchen.png">
-          <h3>Be the shef</h3>
-          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</p>
+          <img src="images/css3.png">
+          <h3>CSS3 Styling</h3>
+          <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
         </div>
         <div class="box">
-          <img src="images/water.png">
-          <h3>24/7 Water Facility</h3>
-          <p>Praesent sed odio enim. Pellentesque maximus mollis libero, ut tempus eros congue vel.</p>
+          <img src="images/js.png">
+          <h3>JavaScript Connectivity</h3>
+          <p>JavaScript, often abbreviated as JS, is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a programming language that is characterized as dynamic, weakly typed, prototype-based and multi-paradigm</p>
         </div>
       </div>
     </section>
@@ -88,33 +65,5 @@
     <footer>
       <p>Copyright &copy; 2019</p>
     </footer>
-     <script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
   </body>
 </html>
