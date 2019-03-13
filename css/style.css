@@ -133,6 +133,12 @@ header a:hover{
 /*About us*/
 
 /*sidebar*/
+article#main-col
+{
+  float:left;
+  width:65%;
+  text-align:justify;
+}
 aside#sidebar{
   float:right;
   margin-top:10px;
