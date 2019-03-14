@@ -1,7 +1,7 @@
 function addProject() {
   const projects = $('#project-container');
   var link="pankajpj07.github.io";
-  var title="New Project";
+  var title=String(window.prompt("Project Title"));
   var src="images/epms.jpg";
   projects.append( `
     <div class="project">
