@@ -1,0 +1,22 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "repository": "https://github.com/pankajpj07/My-Portfolio.git",
+  "author": "PankajJain <pankaj12.pj88@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:scss",
+    "deploy": "now && now alias",
+    "build:scss": "yarn run node-sass --source-map true --source-map-embed --output-style expanded --output css --recursive scss",
+    "dev:scss": "yarn run chokidar 'scss/**/*.scss' --command \"yarn build:scss\"",
+    "dev:server": "yarn run live-server --cors --no-css-inject --ignore=node_modules,scss",
+    "dev": "yarn run concurrently --restart-after 3000 --restart-tries 600 \"yarn run dev:scss\" \"yarn dev:server\""
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.1",
+    "concurrently": "^4.1.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.11.0"
+  },
+  "main": "index.js"
+}
