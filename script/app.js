@@ -13,4 +13,7 @@ function addProject(e) {
     </div>
   ` );
   $("#myForm").css("display", "none");
+  $('#pt').val()='';
+  $('#pl').val()='';
+  $('#pi').val()='';
 }
