@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
   loadData();
@@ -7,12 +8,21 @@ $(document).ready(function () {
 
 function loadData(){
 
-  let projectsData = [];
-  $.getJSON("projects.json", function (data) {
+  
+  $.get("https://my-portfolio-1a95b.firebaseio.com/projects.json", function( data ) {
     console.log(data)
-    projectsData = data.projects;
+    let projectsData = Object.keys(data).map(key => {
+      let ar = data[key]
+
+      ar.key = key
+
+      return ar
+  })
+
+  console.log(projectsData)
 
   const projects = $('#project-container');
+   projects.empty();
   for (let i = 0; i < projectsData.length; i++) {
     projects.append(`
       <div class="project">
@@ -47,9 +57,7 @@ function addProject(e) {
   var link = $('#pl').val();
   var src = $('#pi').val();
 
-  $.getJSON( "projects.json", function( data ) {
-    
-    var newId = data.projects[data.projects.length-1].id+1;
+    const newId = Math.random(100);
     console.log(newId)
     var newProject = {
       id:newId,
@@ -57,11 +65,17 @@ function addProject(e) {
       title:title,
       link:link
     }
-  
-    data.projects.push(newProject);
-    console.log(data)      
-  });
+    console.log(newProject)
+ 
+  $.ajax({
+    url: 'https://my-portfolio-1a95b.firebaseio.com/projects.json',
+    type: 'POST',
+    contentType: false,
+    data: JSON.stringify(newProject),
+    dataType: 'json'
+});
 
+loadData();
 
   $("#myForm").css("display", "none");
   $('#pt').val('');
