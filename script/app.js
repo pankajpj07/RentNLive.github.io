@@ -8,21 +8,13 @@ $(document).ready(function () {
 
 function loadData(){
 
-  
   $.get("https://my-portfolio-1a95b.firebaseio.com/projects.json", function( data ) {
-    console.log(data)
     let projectsData = Object.keys(data).map(key => {
       let ar = data[key]
-
-      ar.key = key
-
       return ar
   })
 
-  console.log(projectsData)
-
   const projects = $('#project-container');
-   projects.empty();
   for (let i = 0; i < projectsData.length; i++) {
     projects.append(`
       <div class="project">
