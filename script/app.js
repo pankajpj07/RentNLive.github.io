@@ -9,11 +9,11 @@ $(document).ready(function () {
 function loadData(){
 
   $.get("https://my-portfolio-1a95b.firebaseio.com/projects.json", function( data ) {
+    console.log( Object.keys( data ).map( key => data[ key ]) );
     let projectsData = Object.keys(data).map(key => {
       let ar = data[key]
       return ar
   })
-
   const projects = $('#project-container');
   for (let i = 0; i < projectsData.length; i++) {
     projects.append(`
