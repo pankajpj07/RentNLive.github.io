@@ -13,6 +13,7 @@ function loadData(){
         let ar = data[key]
         return ar
     });
+    projects.empty();
   const projects = $('#project-container');
   for (let i = 0; i < projectsData.length; i++) {
     projects.append(`
